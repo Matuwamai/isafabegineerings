@@ -7,18 +7,17 @@ import SmartImage from '../components/SmartImage'
 import { CtaBand, PageHero } from '../components/Sections'
 
 // Add real project photos here as jobs are completed, e.g.
-// { src: '/images/projects/gate-kiganjo.jpg', title: 'Sliding gate, Kiganjo', category: 'Modern Gates' }
+// { src: '/images/projects/gate-kiganjo.jpg', title: 'Sliding gate, Kiganjo', category: 'Gates & Security' }
 const extraImages = [
+  { src: '/images/gallery-gate.jpg', title: 'Modern gate', category: 'Gates & Security' },
+  { src: '/images/steel-doors.jpg', title: 'Steel door', category: 'Gates & Security' },
+  { src: '/images/steel-windows.jpg', title: 'Steel windows & grills', category: 'Gates & Security' },
+  { src: '/images/gallery-roof.jpg', title: 'Steel roof trusses', category: 'Roofing & Light Steel Structures' },
   { src: '/images/gallery-welding.jpg', title: 'Welding in progress', category: 'Workshop' },
   { src: '/images/gallery-grinding.jpg', title: 'Grinding & finishing', category: 'Workshop' },
-  { src: '/images/gallery-gate.jpg', title: 'Modern sliding gate', category: 'Modern Gates' },
-  { src: '/images/gallery-roof.jpg', title: 'Steel roof trusses', category: 'Roofing' },
 ]
 
-const images = [
-  ...allServices.map((s) => ({ src: s.image, title: s.name, category: s.name })),
-  ...extraImages,
-]
+const images = [...allServices.map((s) => ({ src: s.image, title: s.name, category: s.name })), ...extraImages]
 const categories = ['All', ...new Set(images.map((i) => i.category))]
 
 export default function Gallery() {
@@ -30,7 +29,7 @@ export default function Gallery() {
       <Seo
         title="Gallery"
         path="/gallery"
-        description={`The kind of steel work ${siteConfig.name} does: gates, doors, windows, beds, roofing and railings in ${siteConfig.location.town}.`}
+        description={`The kind of steel work ${siteConfig.name} does: gates, doors, grills, railings, roofing structures, steel fixing, metal furniture and industrial fabrication in ${siteConfig.location.town}.`}
       />
       <PageHero eyebrow="Gallery" title="What we build">
         A look at the kind of steel work we do.

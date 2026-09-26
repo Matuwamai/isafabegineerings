@@ -14,7 +14,8 @@ export default function SmartImage({ src, alt, className = '', imgClassName = ''
   }, [src])
 
   return (
-    <div className={`relative overflow-hidden bg-steel-800 ${className}`}>
+    // Callers can pass `absolute` to use the image as a background; otherwise it is `relative`.
+    <div className={`${className.includes('absolute') ? '' : 'relative'} overflow-hidden bg-steel-800 ${className}`}>
       {failed ? (
         <div className="steel-grid absolute inset-0 flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-steel-700 to-steel-900 p-4 text-center">
           <ImageOff className="h-7 w-7 text-steel-400" aria-hidden="true" />

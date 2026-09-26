@@ -24,6 +24,9 @@ Tips
 | `modern-gates.jpg` | 1600×1200 | A modern black and grey steel sliding gate with horizontal sheet panels at the entrance of a Kenyan home compound, paved driveway, clear blue sky |
 | `roofing.jpg` | 1600×1200 | Two Black Kenyan workers in hard hats and harnesses fixing steel roof trusses and purlins on a house under construction, blue sky, iron sheets stacked nearby |
 | `railing.jpg` | 1600×1200 | A modern black steel staircase railing with simple vertical bars and a smooth handrail on a tiled staircase in a Kenyan home, clean finish |
+| `steel-fixing.jpg` | 1600×1200 | Two Black Kenyan steel fixers in hard hats, reflective vests and gloves tying reinforcement bars with binding wire on a column and beam rebar cage at a Kenyan construction site, blue sky, concrete blocks nearby |
+| `industrial.jpg` | 1600×1200 | A Black Kenyan fabricator in overalls and safety glasses welding a heavy steel machine frame / equipment platform inside a factory workshop, yellow-painted steel guardrails and a chain hoist in the background |
+| `water-utility.jpg` | 1600×1200 | A tall newly painted steel water-tank tower holding a black plastic water tank beside a Kenyan home, with a steel-framed solar panel mount nearby, clear blue sky |
 | `gallery-welding.jpg` | 1600×1200 | Close-up of a Black welder's gloved hands MIG welding a joint on a steel tube, bright spark and glowing weld bead, dark background |
 | `gallery-grinding.jpg` | 1600×1200 | A Black Kenyan fabricator with face shield grinding a weld on a steel gate using an angle grinder, stream of sparks, workshop setting |
 | `gallery-gate.jpg` | 1600×1200 | A tall modern charcoal-grey steel pedestrian and car gate with laser-cut pattern panels on a Kenyan residential compound wall, evening golden light |

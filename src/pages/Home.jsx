@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, Flame, MapPin, MessageCircle, PaintRoller, Ruler, ShieldCheck, Truck, Wrench } from 'lucide-react'
+import { ArrowRight, Flame, Hammer, MapPin, MessageCircle, PaintRoller, Ruler, ShieldCheck, Truck, Wrench } from 'lucide-react'
 import { siteConfig, whatsappLink } from '../siteConfig'
-import { serviceGroups } from '../data/services'
+import { allServices } from '../data/services'
 import Seo from '../components/Seo'
 import SmartImage from '../components/SmartImage'
 import { CtaBand, SectionHeading } from '../components/Sections'
@@ -42,29 +42,35 @@ export default function Home() {
     <>
       <Seo
         path="/"
-        description={`${siteConfig.name}: steel doors, steel beds, steel windows, modern gates, roofing and railings. Welding, fabrication and steel fixing in ${siteConfig.location.area}, ${siteConfig.location.town}. Call or WhatsApp ${siteConfig.phoneDisplay}.`}
+        description={`${siteConfig.name}: gates, steel doors, grills, railings, roof trusses, carports, rebar steel fixing, metal furniture, tank towers and industrial fabrication. Welding, fabrication and steel fixing in ${siteConfig.location.area}, ${siteConfig.location.town}. Call or WhatsApp ${siteConfig.phoneDisplay}.`}
       />
 
       {/* Hero */}
-      <section className="relative isolate overflow-hidden bg-ink">
+      <section className="relative isolate flex min-h-[calc(100svh-4rem)] flex-col overflow-hidden bg-ink">
         <SmartImage
           src="/images/hero.jpg"
           alt="Welder at work with sparks flying"
           eager
           className="absolute inset-0 -z-10"
-          imgClassName="opacity-60"
+          imgClassName="object-[72%_center]"
         />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink via-ink/85 to-ink/30" aria-hidden="true" />
-        <div className="container-x py-24 sm:py-32 lg:py-40">
+        {/* Dark only where the text sits, so the welder and sparks on the right stay bright. */}
+        <div
+          className="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-ink/75 to-ink/20 md:bg-gradient-to-r md:from-ink md:via-ink/70 md:to-transparent"
+          aria-hidden="true"
+        />
+        <div className="container-x flex flex-1 flex-col justify-end pt-40 pb-14 md:justify-center md:py-24">
           <p className="eyebrow flex items-center gap-2">
             <MapPin className="h-4 w-4" aria-hidden="true" /> {siteConfig.location.area}, {siteConfig.location.town}
           </p>
-          <h1 className="mt-4 max-w-3xl text-5xl leading-[1.05] font-bold text-white sm:text-6xl lg:text-7xl">
-            Strong steel. <span className="text-spark">Clean welds.</span> Built to last.
+          <h1 className="mt-4 max-w-2xl border-l-4 border-spark pl-5 text-5xl leading-[1.05] font-bold text-white drop-shadow-lg sm:text-6xl lg:text-7xl">
+            <span className="block">Strong steel.</span>
+            <span className="block text-spark">Clean welds.</span>
+            <span className="block">Built to last.</span>
           </h1>
-          <p className="mt-6 max-w-xl text-lg text-steel-200">
-            {siteConfig.name} makes steel doors, beds, windows and modern gates, and fixes roofing and railings for
-            homes and businesses in and around {siteConfig.location.town}.
+          <p className="mt-6 max-w-lg text-lg text-steel-100 drop-shadow">
+            Gates, railings, roofing structures, rebar steel fixing, custom metal products and industrial fabrication
+            for homes, businesses and construction sites in and around {siteConfig.location.town}.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link to="/contact" className="btn-primary">
@@ -74,10 +80,10 @@ export default function Home() {
               <MessageCircle className="h-4 w-4" aria-hidden="true" /> WhatsApp us
             </a>
           </div>
-          <ul className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-steel-200">
+          <ul className="mt-10 flex max-w-xl flex-wrap gap-2 text-sm text-steel-100">
             {[years ? `${years}+ years experience` : 'Experienced welder', 'Free quotation', 'Site measurement', 'Installation included'].map(
               (t) => (
-                <li key={t} className="flex items-center gap-2">
+                <li key={t} className="flex items-center gap-2 rounded-full border border-white/15 bg-ink/60 px-3 py-1.5 backdrop-blur">
                   <span className="h-1.5 w-1.5 rounded-full bg-spark" aria-hidden="true" /> {t}
                 </li>
               ),
@@ -91,37 +97,62 @@ export default function Home() {
       <section className="bg-steel-100 py-20 text-ink">
         <div className="container-x">
           <SectionHeading eyebrow="What we do" title="Our services" dark={false}>
-            From a single burglar-proof window to a full roof, we handle the steel work from measurement to installation.
+            From a window grill to a warehouse roof, and from rebar for your foundation to a water-tank tower, we handle the steel work from measurement to installation.
           </SectionHeading>
 
-          {serviceGroups.map((group) => (
-            <div key={group.id} className="mt-12">
-              <h3 className="flex items-center gap-3 text-xl font-semibold text-ink">
-                <span className="h-0.5 w-8 bg-spark" aria-hidden="true" /> {group.title}
-              </h3>
-              <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                {group.services.map((s) => (
-                  <Link
-                    key={s.id}
-                    to={`/services#${s.id}`}
-                    className="group overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-steel-200 transition hover:-translate-y-1 hover:shadow-lg"
-                  >
-                    <SmartImage src={s.image} alt={s.name} className="aspect-[4/3]" imgClassName="transition duration-500 group-hover:scale-105" />
-                    <div className="p-5">
-                      <div className="flex items-center gap-2">
-                        <s.icon className="h-5 w-5 text-spark-600" aria-hidden="true" />
-                        <h4 className="text-lg font-semibold">{s.name}</h4>
-                      </div>
-                      <p className="mt-2 text-sm text-steel-700">{s.summary}</p>
-                      <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-spark-600">
-                        Learn more <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" aria-hidden="true" />
-                      </span>
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {allServices.map((s) => {
+              const items = s.lists.flatMap((l) => l.items)
+              return (
+                <Link
+                  key={s.id}
+                  to={`/services#${s.id}`}
+                  className="group flex flex-col overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-steel-200 transition hover:-translate-y-1 hover:shadow-lg"
+                >
+                  <SmartImage src={s.image} alt={s.name} className="aspect-[4/3]" imgClassName="transition duration-500 group-hover:scale-105" />
+                  <div className="flex flex-1 flex-col p-5">
+                    <p className="text-xs font-semibold tracking-wider text-steel-400 uppercase">{s.group}</p>
+                    <div className="mt-1 flex items-start gap-2">
+                      <s.icon className="mt-0.5 h-5 w-5 shrink-0 text-spark-600" aria-hidden="true" />
+                      <h3 className="text-lg leading-snug font-semibold">{s.name}</h3>
                     </div>
-                  </Link>
-                ))}
+                    <p className="mt-2 text-sm text-steel-700">{s.summary}</p>
+                    <ul className="mt-3 flex flex-wrap gap-1.5">
+                      {items.slice(0, 3).map((item) => (
+                        <li key={item} className="rounded bg-steel-100 px-2 py-0.5 text-xs text-steel-700">
+                          {item}
+                        </li>
+                      ))}
+                      <li className="rounded bg-spark/10 px-2 py-0.5 text-xs font-medium text-spark-600">
+                        +{items.length - 3} more
+                      </li>
+                    </ul>
+                    <span className="mt-auto inline-flex items-center gap-1 pt-4 text-sm font-semibold text-spark-600">
+                      View all <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" aria-hidden="true" />
+                    </span>
+                  </div>
+                </Link>
+              )
+            })}
+
+            <a
+              href={whatsappLink(`Hello ${siteConfig.name}, I have a custom steel job I would like a quote for.`)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col justify-between rounded-lg bg-ink p-6 text-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+            >
+              <div>
+                <Hammer className="h-8 w-8 text-spark" aria-hidden="true" />
+                <h3 className="mt-4 text-2xl font-bold">Have a custom job?</h3>
+                <p className="mt-2 text-sm text-steel-200">
+                  If it's made of steel, we can build it. Send a photo or sketch and get a quote.
+                </p>
               </div>
-            </div>
-          ))}
+              <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-spark">
+                <MessageCircle className="h-4 w-4" aria-hidden="true" /> Send on WhatsApp
+              </span>
+            </a>
+          </div>
         </div>
       </section>
 

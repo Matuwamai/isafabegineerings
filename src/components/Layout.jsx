@@ -22,7 +22,17 @@ const localBusiness = {
   },
   areaServed: siteConfig.serviceAreas,
   sameAs: Object.values(siteConfig.social).filter(Boolean),
-  makesOffer: allServices.map((s) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: s.name } })),
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Welding, fabrication & steel fixing services',
+    itemListElement: allServices.map((s) => ({
+      '@type': 'OfferCatalog',
+      name: s.name,
+      itemListElement: s.lists
+        .flatMap((l) => l.items)
+        .map((item) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: item } })),
+    })),
+  },
 }
 
 export default function Layout() {
