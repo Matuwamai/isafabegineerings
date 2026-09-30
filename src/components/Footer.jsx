@@ -13,7 +13,7 @@ export default function Footer() {
       <div className="hazard-stripe h-1.5" aria-hidden="true" />
       <div className="container-x grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <Logo />
+          <Logo light />
           <p className="mt-4 text-sm text-steel-400">
             {siteConfig.tagline} in {location.area}, {location.town}. Strong steel work, neatly finished and built to
             last.
@@ -26,7 +26,7 @@ export default function Footer() {
           <ul className="mt-4 space-y-2 text-sm text-steel-400">
             {allServices.map((s) => (
               <li key={s.id}>
-                <Link to={`/services#${s.id}`} className="hover:text-spark">
+                <Link to={`/services#${s.id}`} className="hover:text-accent">
                   {s.name}
                 </Link>
               </li>
@@ -39,7 +39,7 @@ export default function Footer() {
           <ul className="mt-4 space-y-2 text-sm text-steel-400">
             {navLinks.map((l) => (
               <li key={l.to}>
-                <Link to={l.to} className="hover:text-spark">
+                <Link to={l.to} className="hover:text-accent">
                   {l.label}
                 </Link>
               </li>
@@ -51,8 +51,8 @@ export default function Footer() {
           <h2 className="text-base text-steel-100">Contact</h2>
           <ul className="mt-4 space-y-3 text-sm text-steel-400">
             <li>
-              <a href={telLink} className="flex items-center gap-2 hover:text-spark">
-                <Phone className="h-4 w-4 text-spark" aria-hidden="true" /> {siteConfig.phoneDisplay}
+              <a href={telLink} className="flex items-center gap-2 hover:text-accent">
+                <Phone className="h-4 w-4 text-accent" aria-hidden="true" /> {siteConfig.phoneDisplay}
               </a>
             </li>
             <li>
@@ -60,16 +60,16 @@ export default function Footer() {
                 href={whatsappLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:text-spark"
+                className="flex items-center gap-2 hover:text-accent"
               >
-                <MessageCircle className="h-4 w-4 text-spark" aria-hidden="true" /> WhatsApp us
+                <MessageCircle className="h-4 w-4 text-accent" aria-hidden="true" /> WhatsApp us
               </a>
             </li>
             <li className="flex items-center gap-2">
-              <MapPin className="h-4 w-4 text-spark" aria-hidden="true" /> {location.area}, {location.town}
+              <MapPin className="h-4 w-4 text-accent" aria-hidden="true" /> {location.area}, {location.town}
             </li>
             <li className="flex items-center gap-2">
-              <Clock className="h-4 w-4 text-spark" aria-hidden="true" /> {siteConfig.hours}
+              <Clock className="h-4 w-4 text-accent" aria-hidden="true" /> {siteConfig.hours}
             </li>
           </ul>
         </div>

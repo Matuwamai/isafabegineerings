@@ -38,7 +38,7 @@ export default function Gallery() {
       <section className="py-16">
         <div className="container-x">
           <p className="flex items-start gap-2 rounded-md border border-steel-800 bg-steel-900 p-4 text-sm text-steel-400">
-            <Info className="mt-0.5 h-4 w-4 shrink-0 text-spark" aria-hidden="true" />
+            <Info className="mt-0.5 h-4 w-4 shrink-0 text-accent" aria-hidden="true" />
             These are illustrations of the type of work we do. Photos of our own completed projects will be added here
             soon.
           </p>
@@ -51,7 +51,7 @@ export default function Gallery() {
                 onClick={() => setActive(c)}
                 aria-pressed={active === c}
                 className={`rounded-full px-4 py-2 text-sm font-medium transition ${
-                  active === c ? 'bg-spark text-ink' : 'border border-steel-700 text-steel-200 hover:border-spark'
+                  active === c ? 'bg-accent-600 text-white' : 'border border-steel-700 text-steel-200 hover:border-accent'
                 }`}
               >
                 {c}
@@ -70,7 +70,7 @@ export default function Gallery() {
                 />
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/90 to-transparent p-4">
                   <p className="font-display text-lg tracking-wide text-white uppercase">{img.title}</p>
-                  <p className="text-xs text-spark">{img.category}</p>
+                  <p className="text-xs text-accent">{img.category}</p>
                 </div>
               </li>
             ))}

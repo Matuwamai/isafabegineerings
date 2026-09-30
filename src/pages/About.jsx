@@ -56,7 +56,7 @@ export default function About() {
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {values.map((v) => (
               <div key={v.title} className="rounded-lg border border-steel-800 bg-steel-900 p-6">
-                <v.icon className="h-7 w-7 text-spark" aria-hidden="true" />
+                <v.icon className="h-7 w-7 text-accent" aria-hidden="true" />
                 <h3 className="mt-3 text-lg font-semibold text-white">{v.title}</h3>
                 <p className="mt-2 text-sm text-steel-400">{v.text}</p>
               </div>
@@ -67,14 +67,14 @@ export default function About() {
 
       <section className="py-20">
         <div className="container-x grid gap-8 md:grid-cols-2">
-          <div className="rounded-lg border-l-4 border-spark bg-steel-900 p-8">
+          <div className="rounded-lg border-l-4 border-accent bg-steel-900 p-8">
             <h2 className="text-2xl font-bold text-white">Our mission</h2>
             <p className="mt-3 text-steel-200">
               To deliver strong, neatly finished steel work that makes homes and businesses safer and better looking, on
               time and at a fair price.
             </p>
           </div>
-          <div className="rounded-lg border-l-4 border-spark bg-steel-900 p-8">
+          <div className="rounded-lg border-l-4 border-accent bg-steel-900 p-8">
             <h2 className="text-2xl font-bold text-white">Our vision</h2>
             <p className="mt-3 text-steel-200">
               To grow from a trusted local fabrication workshop into a leading engineering company in {siteConfig.location.county}{' '}

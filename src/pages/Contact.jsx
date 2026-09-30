@@ -7,7 +7,7 @@ import SocialIcons from '../components/SocialIcons'
 import { PageHero } from '../components/Sections'
 
 const inputClass =
-  'mt-1 w-full rounded-md border border-steel-700 bg-steel-900 px-4 py-3 text-steel-100 placeholder:text-steel-400 focus:border-spark focus:outline-none'
+  'mt-1 w-full rounded-md border border-steel-700 bg-steel-900 px-4 py-3 text-steel-100 placeholder:text-steel-400 focus:border-accent focus:outline-none'
 
 // No backend: the form builds a WhatsApp message and opens it, so the request lands straight on his phone.
 export default function Contact() {
@@ -113,7 +113,7 @@ export default function Contact() {
               {contacts.map((c) => {
                 const body = (
                   <>
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-spark/10 text-spark">
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-accent/10 text-accent">
                       <c.icon className="h-5 w-5" aria-hidden="true" />
                     </span>
                     <span>
@@ -128,7 +128,7 @@ export default function Contact() {
                       <a
                         href={c.href}
                         {...(c.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                        className="flex items-center gap-4 rounded-lg border border-steel-800 p-4 transition hover:border-spark"
+                        className="flex items-center gap-4 rounded-lg border border-steel-800 p-4 transition hover:border-accent"
                       >
                         {body}
                       </a>

@@ -21,7 +21,7 @@ npm run preview  # preview the built site
 | Services, descriptions and bullet points | `src/data/services.js` |
 | Images | `public/images/` (see `IMAGE_PROMPTS.md`) |
 | Gallery extra photos | `src/pages/Gallery.jsx` |
-| Logo (temporary text logo) | `src/components/Logo.jsx`, `public/favicon.svg` |
+| Logo | `public/brand/` (cut-out logo files), `src/components/Logo.jsx`, `public/favicon.png` |
 | Colours & fonts | `src/index.css` |
 
 The quote form needs no backend. It opens WhatsApp with the customer's details filled in.

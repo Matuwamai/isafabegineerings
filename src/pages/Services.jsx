@@ -25,9 +25,9 @@ export default function Services() {
             <li key={s.id}>
               <a
                 href={`#${s.id}`}
-                className="flex items-center gap-2 rounded-full border border-steel-700 px-3 py-1.5 text-sm text-steel-200 transition hover:border-spark hover:text-spark"
+                className="flex items-center gap-2 rounded-full border border-steel-700 px-3 py-1.5 text-sm text-steel-200 transition hover:border-accent hover:text-accent"
               >
-                <s.icon className="h-4 w-4 text-spark" aria-hidden="true" /> {s.name}
+                <s.icon className="h-4 w-4 text-accent" aria-hidden="true" /> {s.name}
               </a>
             </li>
           ))}
@@ -53,7 +53,7 @@ export default function Services() {
                   </div>
                   <div className="lg:col-span-3">
                     <div className="flex items-center gap-3">
-                      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-spark/10 text-spark">
+                      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-accent/10 text-accent">
                         <s.icon className="h-6 w-6" aria-hidden="true" />
                       </span>
                       <h3 className="text-2xl font-bold text-white">{s.name}</h3>
@@ -64,14 +64,14 @@ export default function Services() {
                       {s.lists.map((list) => (
                         <div key={list.title || s.id}>
                           {list.title && (
-                            <h4 className="mb-3 border-b border-steel-800 pb-2 text-sm font-semibold text-spark">
+                            <h4 className="mb-3 border-b border-steel-800 pb-2 text-sm font-semibold text-accent">
                               {list.title}
                             </h4>
                           )}
                           <ul className={`grid gap-x-6 gap-y-2.5 ${s.lists.length > 1 ? '' : 'sm:grid-cols-2'}`}>
                             {list.items.map((item) => (
                               <li key={item} className="flex items-start gap-2 text-sm text-steel-200">
-                                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-spark" aria-hidden="true" /> {item}
+                                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-accent" aria-hidden="true" /> {item}
                               </li>
                             ))}
                           </ul>

@@ -63,9 +63,9 @@ export default function Home() {
           <p className="eyebrow flex items-center gap-2">
             <MapPin className="h-4 w-4" aria-hidden="true" /> {siteConfig.location.area}, {siteConfig.location.town}
           </p>
-          <h1 className="mt-4 max-w-2xl border-l-4 border-spark pl-5 text-5xl leading-[1.05] font-bold text-white drop-shadow-lg sm:text-6xl lg:text-7xl">
+          <h1 className="mt-4 max-w-2xl border-l-4 border-accent pl-5 text-5xl leading-[1.05] font-bold text-white drop-shadow-lg sm:text-6xl lg:text-7xl">
             <span className="block">Strong steel.</span>
-            <span className="block text-spark">Clean welds.</span>
+            <span className="block text-accent">Clean welds.</span>
             <span className="block">Built to last.</span>
           </h1>
           <p className="mt-6 max-w-lg text-lg text-steel-100 drop-shadow">
@@ -84,7 +84,7 @@ export default function Home() {
             {[years ? `${years}+ years experience` : 'Experienced welder', 'Free quotation', 'Site measurement', 'Installation included'].map(
               (t) => (
                 <li key={t} className="flex items-center gap-2 rounded-full border border-white/15 bg-ink/60 px-3 py-1.5 backdrop-blur">
-                  <span className="h-1.5 w-1.5 rounded-full bg-spark" aria-hidden="true" /> {t}
+                  <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" /> {t}
                 </li>
               ),
             )}
@@ -113,7 +113,7 @@ export default function Home() {
                   <div className="flex flex-1 flex-col p-5">
                     <p className="text-xs font-semibold tracking-wider text-steel-400 uppercase">{s.group}</p>
                     <div className="mt-1 flex items-start gap-2">
-                      <s.icon className="mt-0.5 h-5 w-5 shrink-0 text-spark-600" aria-hidden="true" />
+                      <s.icon className="mt-0.5 h-5 w-5 shrink-0 text-accent-700" aria-hidden="true" />
                       <h3 className="text-lg leading-snug font-semibold">{s.name}</h3>
                     </div>
                     <p className="mt-2 text-sm text-steel-700">{s.summary}</p>
@@ -123,11 +123,11 @@ export default function Home() {
                           {item}
                         </li>
                       ))}
-                      <li className="rounded bg-spark/10 px-2 py-0.5 text-xs font-medium text-spark-600">
+                      <li className="rounded bg-accent/10 px-2 py-0.5 text-xs font-medium text-accent-700">
                         +{items.length - 3} more
                       </li>
                     </ul>
-                    <span className="mt-auto inline-flex items-center gap-1 pt-4 text-sm font-semibold text-spark-600">
+                    <span className="mt-auto inline-flex items-center gap-1 pt-4 text-sm font-semibold text-accent-700">
                       View all <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" aria-hidden="true" />
                     </span>
                   </div>
@@ -142,13 +142,13 @@ export default function Home() {
               className="group flex flex-col justify-between rounded-lg bg-ink p-6 text-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
             >
               <div>
-                <Hammer className="h-8 w-8 text-spark" aria-hidden="true" />
+                <Hammer className="h-8 w-8 text-accent" aria-hidden="true" />
                 <h3 className="mt-4 text-2xl font-bold">Have a custom job?</h3>
                 <p className="mt-2 text-sm text-steel-200">
                   If it's made of steel, we can build it. Send a photo or sketch and get a quote.
                 </p>
               </div>
-              <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-spark">
+              <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-accent">
                 <MessageCircle className="h-4 w-4" aria-hidden="true" /> Send on WhatsApp
               </span>
             </a>
@@ -167,7 +167,7 @@ export default function Home() {
             <div className="mt-10 grid gap-6 sm:grid-cols-2">
               {reasons.map((r) => (
                 <div key={r.title} className="rounded-lg border border-steel-800 bg-steel-900 p-5">
-                  <r.icon className="h-7 w-7 text-spark" aria-hidden="true" />
+                  <r.icon className="h-7 w-7 text-accent" aria-hidden="true" />
                   <h3 className="mt-3 text-lg font-semibold text-white">{r.title}</h3>
                   <p className="mt-2 text-sm text-steel-400">{r.text}</p>
                 </div>
@@ -192,7 +192,7 @@ export default function Home() {
                 <span className="font-display text-5xl font-bold text-steel-800" aria-hidden="true">
                   0{i + 1}
                 </span>
-                <s.icon className="absolute top-6 right-6 h-6 w-6 text-spark" aria-hidden="true" />
+                <s.icon className="absolute top-6 right-6 h-6 w-6 text-accent" aria-hidden="true" />
                 <h3 className="mt-2 text-lg font-semibold text-white">{s.title}</h3>
                 <p className="mt-2 text-sm text-steel-400">{s.text}</p>
               </li>
@@ -213,7 +213,7 @@ export default function Home() {
           <ul className="flex flex-wrap gap-2">
             {siteConfig.serviceAreas.map((a) => (
               <li key={a} className="rounded-full border border-steel-700 px-4 py-2 text-sm text-steel-200">
-                <MapPin className="mr-1 inline h-4 w-4 text-spark" aria-hidden="true" />
+                <MapPin className="mr-1 inline h-4 w-4 text-accent" aria-hidden="true" />
                 {a}
               </li>
             ))}

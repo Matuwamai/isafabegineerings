@@ -19,10 +19,10 @@ export default function Header() {
   useEffect(() => setOpen(false), [pathname])
 
   const linkClass = ({ isActive }) =>
-    `font-display text-sm tracking-widest uppercase transition hover:text-spark ${isActive ? 'text-spark' : 'text-steel-200'}`
+    `font-display text-sm tracking-widest uppercase transition hover:text-accent-600 ${isActive ? 'text-accent-600' : 'text-brand'}`
 
   return (
-    <header className="sticky top-0 z-40 border-b border-steel-800 bg-charcoal/90 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-steel-200 bg-white/95 shadow-sm backdrop-blur">
       <div className="container-x flex h-16 items-center justify-between gap-4">
         <Link to="/" aria-label="Isafab Engineering home">
           <Logo />
@@ -44,7 +44,7 @@ export default function Header() {
           </a>
           <button
             type="button"
-            className="flex h-10 w-10 items-center justify-center rounded-md border border-steel-700 md:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-md border border-steel-200 text-brand md:hidden"
             onClick={() => setOpen((o) => !o)}
             aria-expanded={open}
             aria-controls="mobile-nav"
@@ -56,7 +56,7 @@ export default function Header() {
       </div>
 
       {open && (
-        <nav id="mobile-nav" className="border-t border-steel-800 bg-charcoal md:hidden" aria-label="Mobile">
+        <nav id="mobile-nav" className="border-t border-steel-200 bg-white md:hidden" aria-label="Mobile">
           <ul className="container-x flex flex-col py-2">
             {navLinks.map((l) => (
               <li key={l.to}>
@@ -64,7 +64,7 @@ export default function Header() {
                   to={l.to}
                   end={l.to === '/'}
                   className={({ isActive }) =>
-                    `block border-b border-steel-800 py-3 font-display tracking-widest uppercase ${isActive ? 'text-spark' : 'text-steel-100'}`
+                    `block border-b border-steel-100 py-3 font-display tracking-widest uppercase ${isActive ? 'text-accent-600' : 'text-brand'}`
                   }
                 >
                   {l.label}
