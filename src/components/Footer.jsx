@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Clock, MapPin, MessageCircle, Phone } from 'lucide-react'
+import { Clock, Mail, MapPin, MessageCircle, Phone } from 'lucide-react'
 import { siteConfig, telLink, whatsappLink } from '../siteConfig'
 import { allServices } from '../data/services'
 import { navLinks } from './Header'
@@ -65,6 +65,13 @@ export default function Footer() {
                 <MessageCircle className="h-4 w-4 text-accent" aria-hidden="true" /> WhatsApp us
               </a>
             </li>
+            {siteConfig.email && (
+              <li>
+                <a href={`mailto:${siteConfig.email}`} className="flex items-center gap-2 break-all hover:text-accent">
+                  <Mail className="h-4 w-4 shrink-0 text-accent" aria-hidden="true" /> {siteConfig.email}
+                </a>
+              </li>
+            )}
             <li className="flex items-center gap-2">
               <MapPin className="h-4 w-4 text-accent" aria-hidden="true" /> {location.area}, {location.town}
             </li>

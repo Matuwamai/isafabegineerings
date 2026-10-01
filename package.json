@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite-react-ssg dev",
     "build": "vite-react-ssg build && node scripts/seo-files.mjs",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "bash scripts/deploy.sh"
   },
   "dependencies": {
     "lucide-react": "^1.48.0",

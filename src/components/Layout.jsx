@@ -14,6 +14,7 @@ const localBusiness = {
   description: `${siteConfig.tagline} in ${siteConfig.location.area}, ${siteConfig.location.town}.`,
   url: siteConfig.url,
   telephone: siteConfig.phoneIntl,
+  ...(siteConfig.email && { email: siteConfig.email }),
   address: {
     '@type': 'PostalAddress',
     addressLocality: `${siteConfig.location.area}, ${siteConfig.location.town}`,

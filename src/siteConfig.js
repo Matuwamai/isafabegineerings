@@ -4,13 +4,12 @@ export const siteConfig = {
   name: 'Isafab Engineering',
   shortName: 'Isafab',
   tagline: 'Welding, Fabrication & Steel Fixing',
-  // TODO: replace with the real domain once it is purchased.
   url: 'https://isafabengineering.co.ke',
 
   phoneDisplay: '0745 144 475',
   phoneIntl: '+254745144475',
   whatsappNumber: '254745144475', // international format, no "+"
-  email: '', // add when available, e.g. 'info@isafabengineering.co.ke'
+  email: 'isafabegineering@gmail.com',
 
   location: {
     area: 'Kiganjo',

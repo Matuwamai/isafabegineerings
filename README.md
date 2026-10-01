@@ -28,8 +28,10 @@ The quote form needs no backend. It opens WhatsApp with the customer's details f
 
 ## Deploying
 
-1. Push to GitHub, then import the repo in Netlify, Vercel or Cloudflare Pages.
-   Build command: `npm run build`, output directory: `dist`.
-2. Buy the domain, update `url` in `src/siteConfig.js`, and connect the domain in the hosting dashboard.
-3. Submit `https://<domain>/sitemap.xml` in Google Search Console.
-4. Create a Google Business Profile (service-area business, Thika) and link it to the website.
+The site is hosted on a Contabo VPS behind Nginx. Full first-time setup: [deploy/DEPLOY.md](deploy/DEPLOY.md).
+
+To publish updates:
+
+```bash
+DEPLOY_HOST=user@vps-ip npm run deploy
+```
