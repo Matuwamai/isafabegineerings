@@ -10,7 +10,7 @@ export default function Logo({ light = false, className = '' }) {
         height="44"
       />
       <span className="font-display leading-none uppercase">
-        <span className={`block text-xl font-bold tracking-wider ${light ? 'text-white' : 'text-brand'}`}>Isafab</span>
+        <span className={`block text-xl font-bold tracking-wider ${light ? 'text-accent' : 'text-brand'}`}>Isafab</span>
         <span className={`block text-[0.65rem] font-semibold tracking-[0.3em] ${light ? 'text-steel-200' : 'text-steel-700'}`}>
           Engineering
         </span>

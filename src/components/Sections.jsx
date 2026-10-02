@@ -29,8 +29,8 @@ export function CtaBand({ title = 'Have a project in mind?', text = 'Tell us wha
     <section className="relative overflow-hidden bg-accent-600">
       <div className="container-x flex flex-col items-start justify-between gap-6 py-12 md:flex-row md:items-center">
         <div>
-          <h2 className="text-3xl font-bold text-white sm:text-4xl">{title}</h2>
-          <p className="mt-2 max-w-xl text-white/85">{text}</p>
+          <h2 className="text-3xl font-bold text-ink sm:text-4xl">{title}</h2>
+          <p className="mt-2 max-w-xl text-ink/80">{text}</p>
         </div>
         <div className="flex flex-wrap gap-3">
           <Link to="/contact" className="btn bg-ink text-white hover:bg-steel-800">
@@ -40,7 +40,7 @@ export function CtaBand({ title = 'Have a project in mind?', text = 'Tell us wha
             href={whatsappLink()}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn border-2 border-white text-white hover:bg-white hover:text-accent-700"
+            className="btn border-2 border-ink text-ink hover:bg-ink hover:text-white"
           >
             <MessageCircle className="h-4 w-4" aria-hidden="true" /> WhatsApp
           </a>

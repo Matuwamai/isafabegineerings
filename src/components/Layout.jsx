@@ -52,7 +52,7 @@ export default function Layout() {
       <Head>
         <script type="application/ld+json">{JSON.stringify(localBusiness)}</script>
       </Head>
-      <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-accent-600 focus:p-3 focus:text-white">
+      <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-accent-600 focus:p-3 focus:text-ink">
         Skip to content
       </a>
       <Header />

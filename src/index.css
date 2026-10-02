@@ -4,20 +4,20 @@
   --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
   --font-display: 'Oswald', 'Arial Narrow', ui-sans-serif, sans-serif;
 
-  /* Built around the logo navy (#1c3a54) with a clear "arc light" blue accent. */
-  --color-ink: #081420;
-  --color-navy: #0d1b2a;
-  --color-brand: #1c3a54;
-  --color-steel-900: #12243a;
-  --color-steel-800: #1b3350;
-  --color-steel-700: #2b4a66;
-  --color-steel-400: #8ea3b8;
-  --color-steel-200: #c9d5e0;
-  --color-steel-100: #eef3f7;
-  --color-accent: #4ea8de; /* text & icons on dark backgrounds */
-  --color-accent-500: #2a86cf; /* hover */
-  --color-accent-600: #1f6fb2; /* buttons & fills (white text) */
-  --color-accent-700: #185a91; /* text on light backgrounds */
+  /* Charcoal & spark orange. Orange fills always take dark (ink) text for contrast. */
+  --color-ink: #0b0d11;
+  --color-charcoal: #111318;
+  --color-brand: #1c3a54; /* logo navy */
+  --color-steel-900: #181b22;
+  --color-steel-800: #20242d;
+  --color-steel-700: #2d323d;
+  --color-steel-400: #8a93a3;
+  --color-steel-200: #c9ced8;
+  --color-steel-100: #eceef2;
+  --color-accent: #ff6b1a; /* text & icons on dark backgrounds */
+  --color-accent-500: #ffa36b; /* hover */
+  --color-accent-600: #ff6b1a; /* buttons & fills (dark text) */
+  --color-accent-700: #c2410c; /* text on light backgrounds */
 }
 
 @layer base {
@@ -25,7 +25,7 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-navy font-sans text-steel-100 antialiased;
+    @apply bg-charcoal font-sans text-steel-100 antialiased;
   }
   h1,
   h2,
@@ -42,7 +42,7 @@
   @apply inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-semibold tracking-wide uppercase transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent;
 }
 @utility btn-primary {
-  @apply btn bg-accent-600 text-white hover:bg-accent-500;
+  @apply btn bg-accent-600 text-ink hover:bg-accent-500;
 }
 @utility btn-whatsapp {
   @apply btn bg-[#25D366] text-ink hover:bg-[#4be083];

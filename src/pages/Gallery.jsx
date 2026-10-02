@@ -51,7 +51,7 @@ export default function Gallery() {
                 onClick={() => setActive(c)}
                 aria-pressed={active === c}
                 className={`rounded-full px-4 py-2 text-sm font-medium transition ${
-                  active === c ? 'bg-accent-600 text-white' : 'border border-steel-700 text-steel-200 hover:border-accent'
+                  active === c ? 'bg-accent-600 text-ink' : 'border border-steel-700 text-steel-200 hover:border-accent'
                 }`}
               >
                 {c}
