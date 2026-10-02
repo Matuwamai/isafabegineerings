@@ -16,7 +16,7 @@ export default function About() {
   return (
     <>
       <Seo
-        title="About"
+        title="About Us: Welders & Fabricators in Thika"
         path="/about"
         description={`${siteConfig.name} is a welding and fabrication company in ${siteConfig.location.area}, ${siteConfig.location.town}, founded by an experienced fabricator.`}
       />

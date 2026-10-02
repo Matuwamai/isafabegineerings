@@ -26,7 +26,7 @@ export default function Footer() {
           <ul className="mt-4 space-y-2 text-sm text-steel-400">
             {allServices.map((s) => (
               <li key={s.id}>
-                <Link to={`/services#${s.id}`} className="hover:text-accent">
+                <Link to={`/services/${s.id}`} className="hover:text-accent">
                   {s.name}
                 </Link>
               </li>

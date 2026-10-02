@@ -42,7 +42,7 @@ export default function Contact() {
   return (
     <>
       <Seo
-        title="Contact & Quote"
+        title="Contact Us & Get a Free Quote"
         path="/contact"
         description={`Get a free quote from ${siteConfig.name}. Call or WhatsApp ${siteConfig.phoneDisplay}. Based in ${location.area}, ${location.town}.`}
       />

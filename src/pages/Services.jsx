@@ -1,4 +1,5 @@
-import { CheckCircle2, MessageCircle } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { ArrowRight, CheckCircle2, MessageCircle } from 'lucide-react'
 import { siteConfig, whatsappLink } from '../siteConfig'
 import { allServices, serviceGroups } from '../data/services'
 import Seo from '../components/Seo'
@@ -9,9 +10,9 @@ export default function Services() {
   return (
     <>
       <Seo
-        title="Services"
+        title="Welding, Fabrication & Steel Fixing in Thika"
         path="/services"
-        description={`Gates, steel doors, window grills, railings, roof trusses, carports, rebar steel fixing, custom metal furniture, industrial fabrication and water-tank towers by ${siteConfig.name} in ${siteConfig.location.area}, ${siteConfig.location.town}.`}
+        description={`Gates, doors, grills, railings, roof trusses, carports, rebar fixing, metal furniture, industrial fabrication and tank towers in ${siteConfig.location.town}.`}
       />
       <PageHero eyebrow="Our services" title="Welding, fabrication & steel fixing">
         Everything is made to measure, welded properly and finished neatly. Choose a service below or tell us about a
@@ -56,7 +57,11 @@ export default function Services() {
                       <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-accent/10 text-accent">
                         <s.icon className="h-6 w-6" aria-hidden="true" />
                       </span>
-                      <h3 className="text-2xl font-bold text-white">{s.name}</h3>
+                      <h3 className="text-2xl font-bold text-white">
+                        <Link to={`/services/${s.id}`} className="hover:text-accent">
+                          {s.name}
+                        </Link>
+                      </h3>
                     </div>
                     <p className="mt-4 text-lg text-steel-200">{s.summary}</p>
 
@@ -87,6 +92,9 @@ export default function Services() {
                     >
                       <MessageCircle className="h-4 w-4" aria-hidden="true" /> Get a quote
                     </a>
+                    <Link to={`/services/${s.id}`} className="btn-ghost mt-8 ml-3">
+                      More about {s.name.toLowerCase()} <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                    </Link>
                   </div>
                 </article>
               ))}

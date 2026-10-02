@@ -13,6 +13,8 @@ const localBusiness = {
   name: siteConfig.name,
   description: `${siteConfig.tagline} in ${siteConfig.location.area}, ${siteConfig.location.town}.`,
   url: siteConfig.url,
+  logo: `${siteConfig.url}/brand/icon-512.png`,
+  image: `${siteConfig.url}/images/og-cover.jpg`,
   telephone: siteConfig.phoneIntl,
   ...(siteConfig.email && { email: siteConfig.email }),
   address: {

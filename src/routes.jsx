@@ -5,6 +5,8 @@ import Gallery from './pages/Gallery'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import NotFound from './pages/NotFound'
+import ServiceDetail from './pages/ServiceDetail'
+import { allServices } from './data/services'
 
 export const routes = [
   {
@@ -14,6 +16,7 @@ export const routes = [
     children: [
       { index: true, element: <Home /> },
       { path: 'services', element: <Services /> },
+      ...allServices.map((s) => ({ path: `services/${s.id}`, element: <ServiceDetail service={s} /> })),
       { path: 'gallery', element: <Gallery /> },
       { path: 'about', element: <About /> },
       { path: 'contact', element: <Contact /> },

@@ -13,6 +13,7 @@ export default function Seo({ title, description, path = '/', image = '/images/o
       <meta name="description" content={description} />
       <link rel="canonical" href={url} />
       <meta property="og:type" content="website" />
+      <meta property="og:locale" content="en_KE" />
       <meta property="og:site_name" content={siteConfig.name} />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />

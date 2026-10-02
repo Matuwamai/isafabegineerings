@@ -3,7 +3,7 @@ import { ImageOff } from 'lucide-react'
 
 // Shows the image if it exists; otherwise a styled steel placeholder naming the file
 // that still needs to be added to /public/images.
-export default function SmartImage({ src, alt, className = '', imgClassName = '', eager = false }) {
+export default function SmartImage({ src, alt, className = '', imgClassName = '', eager = false, priority = false }) {
   const ref = useRef(null)
   const [failed, setFailed] = useState(false)
 
@@ -27,6 +27,7 @@ export default function SmartImage({ src, alt, className = '', imgClassName = ''
           src={src}
           alt={alt}
           loading={eager ? 'eager' : 'lazy'}
+          fetchpriority={priority ? 'high' : undefined}
           decoding="async"
           onError={() => setFailed(true)}
           className={`h-full w-full object-cover ${imgClassName}`}

@@ -42,7 +42,7 @@ export default function Home() {
     <>
       <Seo
         path="/"
-        description={`${siteConfig.name}: gates, steel doors, grills, railings, roof trusses, carports, rebar steel fixing, metal furniture, tank towers and industrial fabrication. Welding, fabrication and steel fixing in ${siteConfig.location.area}, ${siteConfig.location.town}. Call or WhatsApp ${siteConfig.phoneDisplay}.`}
+        description={`Gates, steel doors, grills, railings, roof trusses, rebar fixing, tank towers and metal fabrication in ${siteConfig.location.area}, ${siteConfig.location.town}. Call ${siteConfig.phoneDisplay}.`}
       />
 
       {/* Hero */}
@@ -51,6 +51,7 @@ export default function Home() {
           src="/images/hero.jpg"
           alt="Welder at work with sparks flying"
           eager
+          priority
           className="absolute inset-0 -z-10"
           imgClassName="object-[72%_center]"
         />
@@ -106,7 +107,7 @@ export default function Home() {
               return (
                 <Link
                   key={s.id}
-                  to={`/services#${s.id}`}
+                  to={`/services/${s.id}`}
                   className="group flex flex-col overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-steel-200 transition hover:-translate-y-1 hover:shadow-lg"
                 >
                   <SmartImage src={s.image} alt={s.name} className="aspect-[4/3]" imgClassName="transition duration-500 group-hover:scale-105" />

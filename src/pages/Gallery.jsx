@@ -27,9 +27,9 @@ export default function Gallery() {
   return (
     <>
       <Seo
-        title="Gallery"
+        title="Gallery: Gates, Railings & Steel Work"
         path="/gallery"
-        description={`The kind of steel work ${siteConfig.name} does: gates, doors, grills, railings, roofing structures, steel fixing, metal furniture and industrial fabrication in ${siteConfig.location.town}.`}
+        description={`Steel work by ${siteConfig.name}: gates, doors, grills, railings, roof structures, steel fixing, metal furniture and fabrication in ${siteConfig.location.town}.`}
       />
       <PageHero eyebrow="Gallery" title="What we build">
         A look at the kind of steel work we do.

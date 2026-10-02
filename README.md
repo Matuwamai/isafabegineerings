@@ -19,6 +19,7 @@ npm run preview  # preview the built site
 |---|---|
 | Phone, WhatsApp, social links, location, hours, domain, years of experience | `src/siteConfig.js` |
 | Services, descriptions and bullet points | `src/data/services.js` |
+| Each service page's Google title, description, text and FAQs | `src/data/serviceDetails.js` |
 | Images | `public/images/` (see `IMAGE_PROMPTS.md`) |
 | Gallery extra photos | `src/pages/Gallery.jsx` |
 | Logo | `public/brand/` (cut-out logo files), `src/components/Logo.jsx`, `public/favicon.png` |
