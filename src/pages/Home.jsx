@@ -42,7 +42,7 @@ export default function Home() {
     <>
       <Seo
         path="/"
-        description={`Gates, steel doors, grills, railings, roof trusses, rebar fixing, tank towers and metal fabrication in ${siteConfig.location.area}, ${siteConfig.location.town}. Call ${siteConfig.phoneDisplay}.`}
+        description={`Gates, steel doors, grills, railings, roof trusses, rebar fixing, tank towers and metal fabrication anywhere in Kenya. Call ${siteConfig.phoneDisplay}.`}
       />
 
       {/* Hero */}
@@ -62,7 +62,7 @@ export default function Home() {
         />
         <div className="container-x flex flex-1 flex-col justify-end pt-40 pb-14 md:justify-center md:py-24">
           <p className="eyebrow flex items-center gap-2">
-            <MapPin className="h-4 w-4" aria-hidden="true" /> {siteConfig.location.area}, {siteConfig.location.town}
+            <MapPin className="h-4 w-4" aria-hidden="true" /> We work anywhere in Kenya
           </p>
           <h1 className="mt-4 max-w-2xl border-l-4 border-accent pl-5 text-5xl leading-[1.05] font-bold text-white drop-shadow-lg sm:text-6xl lg:text-7xl">
             <span className="block">Strong steel.</span>
@@ -71,7 +71,7 @@ export default function Home() {
           </h1>
           <p className="mt-6 max-w-lg text-lg text-steel-100 drop-shadow">
             Gates, railings, roofing structures, rebar steel fixing, custom metal products and industrial fabrication
-            for homes, businesses and construction sites in and around {siteConfig.location.town}.
+            for homes, businesses and construction sites anywhere in Kenya.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link to="/contact" className="btn-primary">
@@ -82,7 +82,7 @@ export default function Home() {
             </a>
           </div>
           <ul className="mt-10 flex max-w-xl flex-wrap gap-2 text-sm text-steel-100">
-            {[years ? `${years}+ years experience` : 'Experienced welder', 'Free quotation', 'Site measurement', 'Installation included'].map(
+            {['All 47 counties', years ? `${years}+ years experience` : 'Experienced welder', 'Free quotation', 'Installation included'].map(
               (t) => (
                 <li key={t} className="flex items-center gap-2 rounded-full border border-white/15 bg-ink/60 px-3 py-1.5 backdrop-blur">
                   <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" /> {t}
@@ -202,23 +202,45 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Service area */}
-      <section className="py-16">
-        <div className="container-x flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+      {/* Service area: he works anywhere in Kenya */}
+      <section className="relative overflow-hidden py-20">
+        <div className="container-x grid items-center gap-12 lg:grid-cols-2">
           <div>
             <p className="eyebrow">Where we work</p>
-            <h2 className="mt-2 text-2xl font-bold text-white sm:text-3xl">
-              Based in {siteConfig.location.area}, {siteConfig.location.town}
+            <h2 className="mt-3 text-4xl font-bold text-white sm:text-5xl">
+              We work <span className="text-accent">anywhere in Kenya</span>
             </h2>
+            <p className="mt-5 text-lg text-steel-200">
+              Wherever your project is, we come to you. We visit your site to measure, fabricate your work, then
+              deliver and install it, for homes, businesses, farms, factories and construction sites in every county.
+            </p>
+            <p className="mt-3 text-sm text-steel-400">
+              Our base is in {siteConfig.location.area}, {siteConfig.location.town}.
+            </p>
+            <a
+              href={whatsappLink(`Hello ${siteConfig.name}, I have a project in (town/county): `)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary mt-8"
+            >
+              <MessageCircle className="h-4 w-4" aria-hidden="true" /> Tell us where your project is
+            </a>
           </div>
-          <ul className="flex flex-wrap gap-2">
-            {siteConfig.serviceAreas.map((a) => (
-              <li key={a} className="rounded-full border border-steel-700 px-4 py-2 text-sm text-steel-200">
-                <MapPin className="mr-1 inline h-4 w-4 text-accent" aria-hidden="true" />
-                {a}
+          <div className="rounded-xl border border-steel-800 bg-steel-900 p-6 sm:p-8">
+            <p className="font-display text-6xl font-bold text-accent sm:text-7xl">47</p>
+            <p className="font-display text-xl tracking-wide text-white uppercase">Counties. One team.</p>
+            <ul className="mt-6 flex flex-wrap gap-2">
+              {siteConfig.serviceAreas.map((a) => (
+                <li key={a} className="rounded-full border border-steel-700 px-3 py-1.5 text-sm text-steel-200">
+                  <MapPin className="mr-1 inline h-3.5 w-3.5 text-accent" aria-hidden="true" />
+                  {a}
+                </li>
+              ))}
+              <li className="rounded-full bg-accent-600 px-3 py-1.5 text-sm font-semibold text-ink">
+                + anywhere else in Kenya
               </li>
-            ))}
-          </ul>
+            </ul>
+          </div>
         </div>
       </section>
 

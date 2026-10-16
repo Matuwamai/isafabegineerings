@@ -17,8 +17,27 @@ export const siteConfig = {
     county: 'Kiambu',
     country: 'KE',
   },
-  // Areas shown on the site. Add the places he is willing to travel to.
-  serviceAreas: ['Kiganjo', 'Thika Town', 'Surrounding areas'],
+  // He works anywhere in Kenya. These towns are shown as examples on the site;
+  // "and anywhere in Kenya" is always added after them.
+  coverage: 'across Kenya',
+  serviceAreas: [
+    'Nairobi',
+    'Thika',
+    'Kiambu',
+    'Ruiru',
+    'Juja',
+    "Murang'a",
+    'Machakos',
+    'Kajiado',
+    'Nakuru',
+    'Naivasha',
+    'Nyeri',
+    'Meru',
+    'Embu',
+    'Eldoret',
+    'Kisumu',
+    'Mombasa',
+  ],
 
   // TODO: confirm working hours.
   hours: 'Mon – Sat, 8:00am – 6:00pm',
@@ -27,10 +46,11 @@ export const siteConfig = {
   yearsExperience: null,
 
   social: {
-    // TODO: confirm these links open the correct accounts.
-    facebook: 'https://www.facebook.com/isanga',
-    tiktok: 'https://www.tiktok.com/@isanga',
-    instagram: 'https://www.instagram.com/isanga_99',
+    // TODO: paste the Facebook page link (Facebook usernames can't contain "_", so it isn't facebook.com/isafab_ke).
+    // The Facebook icon is hidden until this is filled in.
+    facebook: '',
+    tiktok: 'https://www.tiktok.com/@isafab_ke',
+    instagram: 'https://www.instagram.com/isafab_ke',
   },
 }
 

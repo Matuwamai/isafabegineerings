@@ -35,7 +35,7 @@ export default function Contact() {
     { icon: Phone, label: 'Call', value: siteConfig.phoneDisplay, href: telLink },
     { icon: MessageCircle, label: 'WhatsApp', value: siteConfig.phoneDisplay, href: whatsappLink(), external: true },
     siteConfig.email && { icon: Mail, label: 'Email', value: siteConfig.email, href: `mailto:${siteConfig.email}` },
-    { icon: MapPin, label: 'Location', value: `${location.area}, ${location.town}, ${location.county}` },
+    { icon: MapPin, label: 'Where we work', value: `Anywhere in Kenya · based in ${location.area}, ${location.town}` },
     { icon: Clock, label: 'Working hours', value: siteConfig.hours },
   ].filter(Boolean)
 
@@ -44,7 +44,7 @@ export default function Contact() {
       <Seo
         title="Contact Us & Get a Free Quote"
         path="/contact"
-        description={`Get a free quote from ${siteConfig.name}. Call or WhatsApp ${siteConfig.phoneDisplay}. Based in ${location.area}, ${location.town}.`}
+        description={`Get a free quote from ${siteConfig.name}. Call or WhatsApp ${siteConfig.phoneDisplay}. We work anywhere in Kenya.`}
       />
       <PageHero eyebrow="Contact us" title="Get a free quote">
         Tell us what you need. The fastest way to reach us is WhatsApp. Send photos or rough sizes and we'll get back to
@@ -77,7 +77,7 @@ export default function Contact() {
               </label>
               <label className="block text-sm font-medium text-steel-200">
                 Your location
-                <input name="location" value={form.location} onChange={update} placeholder="e.g. Thika, Makongeni" className={inputClass} />
+                <input name="location" value={form.location} onChange={update} placeholder="Town / county, e.g. Nairobi, Nakuru" className={inputClass} />
               </label>
               <label className="block text-sm font-medium text-steel-200">
                 Service

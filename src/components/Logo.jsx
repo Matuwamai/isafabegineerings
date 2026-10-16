@@ -3,10 +3,10 @@ export default function Logo({ light = false, className = '' }) {
   return (
     <span className={`flex items-center gap-2.5 ${className}`}>
       <img
-        src={light ? '/brand/logo-mark-white.png' : '/brand/logo-mark.png'}
+        src={light ? '/brand/logo-mark-white.svg' : '/brand/logo-mark.svg'}
         alt=""
-        className="h-11 w-11"
-        width="44"
+        className="h-11 w-auto"
+        width="59"
         height="44"
       />
       <span className="font-display leading-none uppercase">

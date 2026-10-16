@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import { Head } from 'vite-react-ssg'
-import { MessageCircle } from 'lucide-react'
-import { siteConfig, whatsappLink } from '../siteConfig'
+import { MapPin, MessageCircle, Phone } from 'lucide-react'
+import { siteConfig, telLink, whatsappLink } from '../siteConfig'
 import { allServices } from '../data/services'
 import Header from './Header'
 import Footer from './Footer'
@@ -11,7 +11,7 @@ const localBusiness = {
   '@context': 'https://schema.org',
   '@type': 'HomeAndConstructionBusiness',
   name: siteConfig.name,
-  description: `${siteConfig.tagline} in ${siteConfig.location.area}, ${siteConfig.location.town}.`,
+  description: `${siteConfig.tagline} for homes, businesses and construction sites across Kenya. Based in ${siteConfig.location.area}, ${siteConfig.location.town}.`,
   url: siteConfig.url,
   logo: `${siteConfig.url}/brand/icon-512.png`,
   image: `${siteConfig.url}/images/og-cover.jpg`,
@@ -23,7 +23,7 @@ const localBusiness = {
     addressRegion: siteConfig.location.county,
     addressCountry: siteConfig.location.country,
   },
-  areaServed: siteConfig.serviceAreas,
+  areaServed: { '@type': 'Country', name: 'Kenya' },
   sameAs: Object.values(siteConfig.social).filter(Boolean),
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
@@ -57,6 +57,16 @@ export default function Layout() {
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-accent-600 focus:p-3 focus:text-ink">
         Skip to content
       </a>
+      <div className="bg-accent-600 text-ink">
+        <p className="container-x flex items-center justify-center gap-x-4 gap-y-1 py-1.5 text-center text-xs font-semibold tracking-wide uppercase sm:text-sm">
+          <span className="flex items-center gap-1.5">
+            <MapPin className="h-4 w-4" aria-hidden="true" /> We work anywhere in Kenya: all 47 counties
+          </span>
+          <a href={telLink} className="hidden items-center gap-1.5 hover:underline sm:flex">
+            <Phone className="h-4 w-4" aria-hidden="true" /> {siteConfig.phoneDisplay}
+          </a>
+        </p>
+      </div>
       <Header />
       <main id="main">
         <Outlet />

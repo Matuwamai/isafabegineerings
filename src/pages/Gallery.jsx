@@ -29,7 +29,7 @@ export default function Gallery() {
       <Seo
         title="Gallery: Gates, Railings & Steel Work"
         path="/gallery"
-        description={`Steel work by ${siteConfig.name}: gates, doors, grills, railings, roof structures, steel fixing, metal furniture and fabrication in ${siteConfig.location.town}.`}
+        description={`Steel work by ${siteConfig.name}: gates, doors, grills, railings, roof structures, steel fixing, metal furniture and fabrication across Kenya.`}
       />
       <PageHero eyebrow="Gallery" title="What we build">
         A look at the kind of steel work we do.

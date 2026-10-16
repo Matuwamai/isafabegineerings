@@ -2,7 +2,7 @@ import { Head } from 'vite-react-ssg'
 import { siteConfig } from '../siteConfig'
 
 export default function Seo({ title, description, path = '/', image = '/images/og-cover.jpg' }) {
-  const fullTitle = title ? `${title} | ${siteConfig.name}` : `${siteConfig.name} | ${siteConfig.tagline} in Thika`
+  const fullTitle = title ? `${title} | ${siteConfig.name}` : `${siteConfig.name} | ${siteConfig.tagline} in Kenya`
   const url = `${siteConfig.url}${path}`
   const imageUrl = `${siteConfig.url}${image}`
 

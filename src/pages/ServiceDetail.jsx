@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Head } from 'vite-react-ssg'
-import { ArrowRight, CheckCircle2, ChevronDown, ChevronRight, MessageCircle, Phone } from 'lucide-react'
+import { ArrowRight, CheckCircle2, ChevronDown, ChevronRight, MapPin, MessageCircle, Phone } from 'lucide-react'
 import { siteConfig, telLink, whatsappLink } from '../siteConfig'
 import { allServices } from '../data/services'
 import { serviceDetails } from '../data/serviceDetails'
@@ -12,6 +12,13 @@ export default function ServiceDetail({ service }) {
   const detail = serviceDetails[service.id]
   const path = `/services/${service.id}`
   const related = allServices.filter((s) => s.id !== service.id)
+  const faqs = [
+    ...detail.faqs,
+    {
+      q: `Do you work outside ${siteConfig.location.town}?`,
+      a: `Yes. We are based in ${siteConfig.location.area}, ${siteConfig.location.town}, but we work anywhere in Kenya. Tell us your town or county and we will arrange a site visit.`,
+    },
+  ]
 
   const structuredData = [
     {
@@ -22,7 +29,7 @@ export default function ServiceDetail({ service }) {
       description: detail.metaDescription,
       url: `${siteConfig.url}${path}`,
       image: `${siteConfig.url}${service.image}`,
-      areaServed: siteConfig.serviceAreas,
+      areaServed: { '@type': 'Country', name: 'Kenya' },
       provider: { '@type': 'HomeAndConstructionBusiness', name: siteConfig.name, url: siteConfig.url, telephone: siteConfig.phoneIntl },
     },
     {
@@ -68,7 +75,7 @@ export default function ServiceDetail({ service }) {
         <div className="container-x grid gap-10 lg:grid-cols-2 lg:gap-14">
           <SmartImage
             src={service.image}
-            alt={`${service.name} by ${siteConfig.name}, ${siteConfig.location.town}`}
+            alt={`${service.name} by ${siteConfig.name}, Kenya`}
             eager
             className="aspect-[4/3] rounded-lg ring-1 ring-steel-800"
           />
@@ -79,6 +86,13 @@ export default function ServiceDetail({ service }) {
                 {p}
               </p>
             ))}
+            <p className="mt-6 flex items-start gap-3 rounded-lg border border-accent/40 bg-accent/10 p-4 text-steel-100">
+              <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-accent" aria-hidden="true" />
+              <span>
+                <strong className="text-white">We work anywhere in Kenya.</strong> We come to your site to measure, then
+                deliver and install, whether you are in Nairobi, Mombasa, Kisumu, Eldoret or anywhere in between.
+              </span>
+            </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href={whatsappLink(`Hello ${siteConfig.name}, I would like a quote for ${service.name.toLowerCase()}.`)}
@@ -122,7 +136,7 @@ export default function ServiceDetail({ service }) {
           <p className="eyebrow">Questions</p>
           <h2 className="mt-2 text-3xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-8 divide-y divide-steel-800 rounded-lg border border-steel-800">
-            {detail.faqs.map((f) => (
+            {faqs.map((f) => (
               <details key={f.q} className="group p-5">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-white">
                   {f.q}

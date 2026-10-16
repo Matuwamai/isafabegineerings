@@ -10,13 +10,13 @@ export default function Services() {
   return (
     <>
       <Seo
-        title="Welding, Fabrication & Steel Fixing in Thika"
+        title="Welding, Fabrication & Steel Fixing in Kenya"
         path="/services"
-        description={`Gates, doors, grills, railings, roof trusses, carports, rebar fixing, metal furniture, industrial fabrication and tank towers in ${siteConfig.location.town}.`}
+        description={`Gates, doors, grills, railings, roof trusses, carports, rebar fixing, metal furniture, industrial fabrication and tank towers, anywhere in Kenya.`}
       />
       <PageHero eyebrow="Our services" title="Welding, fabrication & steel fixing">
-        Everything is made to measure, welded properly and finished neatly. Choose a service below or tell us about a
-        custom job.
+        Everything is made to measure, welded properly and finished neatly, and we work anywhere in Kenya. Choose a
+        service below or tell us about a custom job.
       </PageHero>
 
       {/* Quick jump to a category */}

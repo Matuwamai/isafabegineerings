@@ -15,8 +15,8 @@ export default function Footer() {
         <div>
           <Logo light />
           <p className="mt-4 text-sm text-steel-400">
-            {siteConfig.tagline} in {location.area}, {location.town}. Strong steel work, neatly finished and built to
-            last.
+            {siteConfig.tagline} for clients anywhere in Kenya. Based in {location.area}, {location.town}. Strong steel work,
+            neatly finished and built to last.
           </p>
           <SocialIcons className="mt-5" />
         </div>
@@ -73,8 +73,9 @@ export default function Footer() {
               </li>
             )}
             <li className="flex items-center gap-2">
-              <MapPin className="h-4 w-4 text-accent" aria-hidden="true" /> {location.area}, {location.town}
+              <MapPin className="h-4 w-4 shrink-0 text-accent" aria-hidden="true" /> We work anywhere in Kenya
             </li>
+            <li className="flex items-center gap-2 pl-6">Based in {location.area}, {location.town}</li>
             <li className="flex items-center gap-2">
               <Clock className="h-4 w-4 text-accent" aria-hidden="true" /> {siteConfig.hours}
             </li>

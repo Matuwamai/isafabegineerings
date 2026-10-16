@@ -1,11 +1,11 @@
 // Extra content for each service's own page (/services/<id>). Keyed by the ids in services.js.
-// Each page targets what people actually search for, e.g. "steel gates Thika".
+// Each page targets what people actually search for, e.g. "steel gates Kenya".
 
 export const serviceDetails = {
   'gates-security': {
-    seoTitle: 'Steel Gates, Doors & Window Grills in Thika',
+    seoTitle: 'Steel Gates, Doors & Window Grills in Kenya',
     metaDescription:
-      'Sliding and swing gates, steel doors, burglar-proof doors, window grills and fencing, made to measure and installed by Isafab Engineering in Thika.',
+      'Sliding and swing gates, steel doors, burglar-proof doors, window grills and fencing, made to measure and installed anywhere in Kenya by Isafab Engineering.',
     intro: [
       'Your gate is the first thing visitors see and the first line of security for your home or business. We fabricate sliding, swing, double-leaf and pedestrian gates, steel and burglar-proof doors, window grills and perimeter fencing to your exact measurements, then paint and install them on site.',
       'Choose a modern sheet or bar design, a classic pattern, or send us a photo of a design you like. We advise on the right steel sizes so your gate is strong but still opens smoothly, including sliding gates that will be fitted with an electric motor.',
@@ -23,9 +23,9 @@ export const serviceDetails = {
     ],
   },
   'railings-access': {
-    seoTitle: 'Staircase, Balcony & Steel Railings in Thika',
+    seoTitle: 'Staircase, Balcony & Steel Railings in Kenya',
     metaDescription:
-      'Staircase and balcony railings, handrails, industrial guardrails and steel staircases, fabricated and installed by Isafab Engineering in Kiganjo, Thika.',
+      'Staircase and balcony railings, handrails, industrial guardrails and steel staircases, fabricated and installed anywhere in Kenya.',
     intro: [
       'Railings keep people safe on stairs, balconies and walkways, and they shape how a building looks. We make staircase, balcony and veranda railings and handrails for homes, and safety rails, guardrails and walkway railings for commercial and industrial sites.',
       'We also fabricate complete steel staircases and fire-escape stairs. Every rail is measured on site, welded solid, ground smooth so there are no sharp edges, and painted to protect it from rust.',
@@ -46,9 +46,9 @@ export const serviceDetails = {
     ],
   },
   'roofing-structures': {
-    seoTitle: 'Steel Roof Trusses & Carports in Thika',
+    seoTitle: 'Steel Roof Trusses & Carports in Kenya',
     metaDescription:
-      'Steel roof trusses, roofing frames, carports, canopies, garages, sheds and warehouse roof structures by Isafab Engineering in Kiganjo, Thika.',
+      'Steel roof trusses, roofing frames, carports, canopies, garages, sheds and warehouse roof structures, built anywhere in Kenya.',
     intro: [
       'Steel roof trusses are strong, stay straight and are not affected by termites or rot. We fabricate and fix trusses and purlins for houses, shops, schools and warehouses.',
       'We also build carports, canopies, shade structures, garages and steel sheds. We work from your architect’s or engineer’s drawings where you have them, and advise on a practical design for smaller structures like carports and sheds.',
@@ -69,9 +69,9 @@ export const serviceDetails = {
     ],
   },
   'custom-metal-products': {
-    seoTitle: 'Steel Beds, Metal Furniture & Shelves in Thika',
+    seoTitle: 'Steel Beds, Metal Furniture & Shelves in Kenya',
     metaDescription:
-      'Steel beds, metal tables and chairs, wardrobes, shelves, storage racks, shop counters and display stands made to order by Isafab Engineering in Kiganjo, Thika.',
+      'Steel beds, metal tables and chairs, wardrobes, shelves, storage racks, shop counters and display stands made to order, delivered anywhere in Kenya.',
     intro: [
       'Steel furniture and fittings last for years with very little maintenance. For homes we make steel beds, metal tables and chairs, wardrobes, shoe racks, kitchen and laundry frames, outdoor furniture, pergolas and decorative metalwork.',
       'For shops, offices and workshops we make shelves, storage racks, display stands, counters, cabinets, work benches, trolleys and cages, sized to fit your space and the weight they need to carry. We take single pieces and bulk orders for schools, hostels and businesses.',
@@ -92,9 +92,9 @@ export const serviceDetails = {
     ],
   },
   'reinforcement-steel-fixing': {
-    seoTitle: 'Rebar & Reinforcement Steel Fixing in Thika',
+    seoTitle: 'Rebar & Reinforcement Steel Fixing in Kenya',
     metaDescription:
-      'Rebar cutting, bending, tying and fixing for footings, columns, beams, slabs and walls on construction sites in Thika and Kiambu. Free quote.',
+      'Rebar cutting, bending, tying and fixing for footings, columns, beams, slabs and walls on construction sites anywhere in Kenya. Free quote.',
     intro: [
       'Reinforcement steel holds a concrete structure together, so it has to match the structural drawings exactly. We cut, bend, tie and fix rebar for footings and foundations, columns, beams, ground and ring beams, slabs, staircases, retaining walls and shear walls, and fabricate reinforcement cages and mesh.',
       'We work for homeowners building their own houses and for contractors who need steel fixers on site. We follow your engineer’s drawings and bar bending schedule, so the steel is ready for inspection before the concrete pour.',
@@ -115,11 +115,11 @@ export const serviceDetails = {
     ],
   },
   'industrial-fabrication': {
-    seoTitle: 'Industrial Steel Fabrication in Thika',
+    seoTitle: 'Industrial Steel Fabrication in Kenya',
     metaDescription:
-      'Machine frames, platforms, industrial stairs, guardrails, machine guards, enclosures and warehouse racking for factories in Thika by Isafab Engineering.',
+      'Machine frames, platforms, industrial stairs, guardrails, machine guards, enclosures and warehouse racking for factories anywhere in Kenya.',
     intro: [
-      'Thika is one of Kenya’s main industrial towns, and its factories need steelwork built for heavy daily use. We fabricate machine and conveyor frames, equipment, maintenance and access platforms, industrial stairs, guardrails, safety barriers and machine guards.',
+      'From Thika and Nairobi to Mombasa, Nakuru and Kisumu, factories across Kenya need steelwork built for heavy daily use. We fabricate machine and conveyor frames, equipment, maintenance and access platforms, industrial stairs, guardrails, safety barriers and machine guards.',
       'We also make industrial and control-panel enclosures, steel cabinets, pipe and equipment supports, factory partitions, warehouse racking and other heavy-duty steel structures, built to fit your existing equipment and layout.',
     ],
     faqs: [
@@ -138,9 +138,9 @@ export const serviceDetails = {
     ],
   },
   'water-utility': {
-    seoTitle: 'Water Tank Towers & Generator Cages in Thika',
+    seoTitle: 'Water Tank Towers & Generator Cages in Kenya',
     metaDescription:
-      'Steel water tank towers and stands, generator platforms and cages, pump-house structures and solar panel mounts by Isafab Engineering in Thika.',
+      'Steel water tank towers and stands, generator platforms and cages, pump-house structures and solar panel mounts, built anywhere in Kenya.',
     intro: [
       'A full water tank weighs several tonnes, so the tower holding it must be designed and welded properly. We build steel water tank towers, elevated tank stands and tank support structures for homes, schools, farms and businesses.',
       'We also make generator platforms and security cages, pump-house structures, pipe supports and utility equipment frames, and steel mounting structures for solar panels and solar equipment.',

@@ -16,9 +16,9 @@ export default function About() {
   return (
     <>
       <Seo
-        title="About Us: Welders & Fabricators in Thika"
+        title="About Us: Welders & Fabricators in Kenya"
         path="/about"
-        description={`${siteConfig.name} is a welding and fabrication company in ${siteConfig.location.area}, ${siteConfig.location.town}, founded by an experienced fabricator.`}
+        description={`${siteConfig.name} is a welding, fabrication and steel fixing company serving clients across Kenya, based in ${siteConfig.location.area}, ${siteConfig.location.town}.`}
       />
       <PageHero eyebrow="About us" title={`The story behind ${siteConfig.name}`} />
 
@@ -38,9 +38,10 @@ export default function About() {
               work for homes and businesses.
             </p>
             <p>
-              After years of building for others, he started {siteConfig.name} to give clients in{' '}
-              {siteConfig.location.area}, {siteConfig.location.town} and the surrounding areas direct access to quality
-              steel work, with fair prices, honest advice and the personal attention of the person doing the job.
+              After years of building for others, he started {siteConfig.name} to give clients in every part of Kenya
+              direct access to quality steel work, with fair prices, honest advice and the personal attention of the
+              person doing the job. We are based in {siteConfig.location.area}, {siteConfig.location.town}, and travel
+              to sites anywhere in the country to measure, deliver and install.
             </p>
             <p>
               Today we focus on welding, fabrication and steel fixing. Our goal is to grow into a full engineering
@@ -77,8 +78,8 @@ export default function About() {
           <div className="rounded-lg border-l-4 border-accent bg-steel-900 p-8">
             <h2 className="text-2xl font-bold text-white">Our vision</h2>
             <p className="mt-3 text-steel-200">
-              To grow from a trusted local fabrication workshop into a leading engineering company in {siteConfig.location.county}{' '}
-              and beyond.
+              To grow from a trusted local fabrication workshop into a leading engineering company across Kenya and
+              beyond.
             </p>
           </div>
         </div>
