@@ -12,7 +12,7 @@ export const serviceGroups = [
         id: 'gates-security',
         name: 'Gates & Security',
         icon: Fence,
-        image: '/images/modern-gates.jpg',
+        image: '/images/work/ornamental-steel-gate.jpg',
         summary: 'Modern gates, steel doors, grills and fencing that keep your home or business secure and looking sharp.',
         lists: [
           {
@@ -60,7 +60,7 @@ export const serviceGroups = [
         id: 'roofing-structures',
         name: 'Roofing & Light Steel Structures',
         icon: Warehouse,
-        image: '/images/roofing.jpg',
+        image: '/images/work/steel-veranda-roof.jpg',
         summary: 'Steel roof trusses, carports, canopies and sheds, from a single carport to a warehouse roof.',
         lists: [
           {
@@ -82,7 +82,7 @@ export const serviceGroups = [
         id: 'custom-metal-products',
         name: 'Custom Metal Products',
         icon: Sofa,
-        image: '/images/steel-beds.jpg',
+        image: '/images/work/painted-steel-bunk-beds.jpg',
         summary: 'Furniture, shelving, counters and stands made to your design, for your home or your shop.',
         lists: [
           {

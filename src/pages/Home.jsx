@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, Flame, Hammer, MapPin, MessageCircle, PaintRoller, Ruler, ShieldCheck, Truck, Wrench } from 'lucide-react'
 import { siteConfig, whatsappLink } from '../siteConfig'
 import { allServices } from '../data/services'
+import { featuredWork } from '../data/work'
+import WorkPhoto from '../components/WorkPhoto'
 import Seo from '../components/Seo'
 import SmartImage from '../components/SmartImage'
 import { CtaBand, SectionHeading } from '../components/Sections'
@@ -61,14 +63,14 @@ export default function Home() {
           aria-hidden="true"
         />
         <div className="container-x flex flex-1 flex-col justify-end pt-40 pb-14 md:justify-center md:py-24">
-          <p className="eyebrow flex items-center gap-2">
-            <MapPin className="h-4 w-4" aria-hidden="true" /> We work anywhere in Kenya
-          </p>
-          <h1 className="mt-4 max-w-2xl border-l-4 border-accent pl-5 text-5xl leading-[1.05] font-bold text-white drop-shadow-lg sm:text-6xl lg:text-7xl">
+          <h1 className="eyebrow flex items-start gap-2">
+            <MapPin className="h-4 w-4 shrink-0" aria-hidden="true" /> Welding, Fabrication &amp; Steel Fixing · Anywhere in Kenya
+          </h1>
+          <p className="mt-4 max-w-2xl border-l-4 border-accent pl-5 font-display text-5xl leading-[1.05] font-bold tracking-wide text-white uppercase drop-shadow-lg sm:text-6xl lg:text-7xl">
             <span className="block">Strong steel.</span>
             <span className="block text-accent">Clean welds.</span>
             <span className="block">Built to last.</span>
-          </h1>
+          </p>
           <p className="mt-6 max-w-lg text-lg text-steel-100 drop-shadow">
             Gates, railings, roofing structures, rebar steel fixing, custom metal products and industrial fabrication
             for homes, businesses and construction sites anywhere in Kenya.
@@ -157,6 +159,29 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Recent work: real photos */}
+      <section className="py-20">
+        <div className="container-x">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <SectionHeading eyebrow="Our work" title="Recent work">
+              Real photos of gates, beds, roof structures and fencing by our team.
+            </SectionHeading>
+            <Link to="/gallery" className="btn-ghost shrink-0">
+              See all photos <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+          </div>
+          <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {featuredWork.map((photo) => (
+              <li key={photo.file}>
+                <Link to="/gallery" className="block h-full">
+                  <WorkPhoto photo={photo} aspect="aspect-[3/4]" className="h-full" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       {/* Why us */}
       <section className="py-20">
         <div className="container-x grid items-center gap-12 lg:grid-cols-2">
@@ -176,8 +201,8 @@ export default function Home() {
             </div>
           </div>
           <SmartImage
-            src="/images/welder-portrait.jpg"
-            alt="Fabricator in protective gear in the workshop"
+            src="/images/work/fabricator-on-site.jpg"
+            alt="Isafab Engineering founder on site in front of a steel roof frame"
             className="aspect-[4/5] rounded-lg ring-1 ring-steel-800"
           />
         </div>

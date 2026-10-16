@@ -4,6 +4,8 @@ import { ArrowRight, CheckCircle2, ChevronDown, ChevronRight, MapPin, MessageCir
 import { siteConfig, telLink, whatsappLink } from '../siteConfig'
 import { allServices } from '../data/services'
 import { serviceDetails } from '../data/serviceDetails'
+import { photosForService } from '../data/work'
+import WorkPhoto from '../components/WorkPhoto'
 import Seo from '../components/Seo'
 import SmartImage from '../components/SmartImage'
 import { CtaBand } from '../components/Sections'
@@ -12,6 +14,7 @@ export default function ServiceDetail({ service }) {
   const detail = serviceDetails[service.id]
   const path = `/services/${service.id}`
   const related = allServices.filter((s) => s.id !== service.id)
+  const photos = photosForService(service.id)
   const faqs = [
     ...detail.faqs,
     {
@@ -40,6 +43,11 @@ export default function ServiceDetail({ service }) {
         { '@type': 'ListItem', position: 2, name: 'Services', item: `${siteConfig.url}/services` },
         { '@type': 'ListItem', position: 3, name: service.name, item: `${siteConfig.url}${path}` },
       ],
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
     },
   ]
 
@@ -131,7 +139,30 @@ export default function ServiceDetail({ service }) {
         </div>
       </section>
 
-      <section className="py-16">
+      {photos.length > 0 && (
+        <section className="py-16">
+          <div className="container-x">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <p className="eyebrow">Our work</p>
+                <h2 className="mt-2 text-3xl font-bold text-white">Photos of our {service.name.toLowerCase()} work</h2>
+              </div>
+              <Link to="/gallery" className="btn-ghost shrink-0">
+                All photos <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            </div>
+            <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {photos.slice(0, 4).map((photo) => (
+                <li key={photo.file}>
+                  <WorkPhoto photo={photo} aspect="aspect-[3/4]" className="h-full" />
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
+      <section className={`py-16 ${photos.length > 0 ? 'border-t border-steel-800' : ''}`}>
         <div className="container-x max-w-3xl">
           <p className="eyebrow">Questions</p>
           <h2 className="mt-2 text-3xl font-bold text-white">Frequently asked questions</h2>

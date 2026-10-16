@@ -25,8 +25,8 @@ export default function About() {
       <section className="py-20">
         <div className="container-x grid items-center gap-12 lg:grid-cols-2">
           <SmartImage
-            src="/images/about.jpg"
-            alt="Fabricator measuring steel in the workshop"
+            src="/images/work/welding-roof-framework.jpg"
+            alt="Isafab Engineering founder on site with steel roof framework"
             className="aspect-[4/3] rounded-lg ring-1 ring-steel-800"
           />
           <div className="space-y-5 text-steel-200">

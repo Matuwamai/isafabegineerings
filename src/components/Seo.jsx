@@ -8,7 +8,7 @@ export default function Seo({ title, description, path = '/', image = '/images/o
 
   return (
     <Head>
-      <html lang="en" />
+      <html lang="en-KE" />
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={url} />

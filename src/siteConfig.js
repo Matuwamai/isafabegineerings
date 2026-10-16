@@ -46,9 +46,7 @@ export const siteConfig = {
   yearsExperience: null,
 
   social: {
-    // TODO: paste the Facebook page link (Facebook usernames can't contain "_", so it isn't facebook.com/isafab_ke).
-    // The Facebook icon is hidden until this is filled in.
-    facebook: '',
+    facebook: 'https://www.facebook.com/isaac.ngarivkv',
     tiktok: 'https://www.tiktok.com/@isafab_ke',
     instagram: 'https://www.instagram.com/isafab_ke',
   },

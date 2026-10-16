@@ -1,5 +1,6 @@
 // Runs after the build: writes sitemap.xml and robots.txt using the domain in siteConfig.
-// Every pre-rendered page in dist/ is listed, so new pages are picked up automatically.
+// Every pre-rendered page in dist/ is listed, so new pages are picked up automatically,
+// along with the photos on each page (for Google Images).
 import { readFileSync, readdirSync, writeFileSync } from 'node:fs'
 import { join, relative } from 'node:path'
 
@@ -17,13 +18,24 @@ const pages = findPages('dist')
   .filter((p) => p !== '/404')
   .sort((a, b) => a.split('/').length - b.split('/').length || a.localeCompare(b))
 
+// Photos shown on a page (logos and icons are left out).
+const imagesOn = (page) => {
+  const html = readFileSync(join('dist', page, 'index.html'), 'utf8')
+  return [...new Set([...html.matchAll(/<img[^>]+src="(\/images\/[^"]+)"/g)].map((m) => m[1]))]
+}
+
 const priority = (p) => (p === '/' ? '1.0' : p.startsWith('/services') ? '0.9' : '0.7')
 
 writeFileSync(
   'dist/sitemap.xml',
   `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${pages.map((p) => `  <url><loc>${url}${p}</loc><lastmod>${today}</lastmod><priority>${priority(p)}</priority></url>`).join('\n')}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+${pages
+  .map((p) => {
+    const images = imagesOn(p).map((src) => `\n    <image:image><image:loc>${url}${src}</image:loc></image:image>`).join('')
+    return `  <url><loc>${url}${p}</loc><lastmod>${today}</lastmod><priority>${priority(p)}</priority>${images}\n  </url>`
+  })
+  .join('\n')}
 </urlset>
 `,
 )

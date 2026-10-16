@@ -1,49 +1,48 @@
-import { useState } from 'react'
-import { Info } from 'lucide-react'
+import { useEffect, useState } from 'react'
+import { ChevronLeft, ChevronRight, X } from 'lucide-react'
 import { siteConfig } from '../siteConfig'
-import { allServices } from '../data/services'
+import { workCategories, workPhotos } from '../data/work'
 import Seo from '../components/Seo'
-import SmartImage from '../components/SmartImage'
+import WorkPhoto from '../components/WorkPhoto'
 import { CtaBand, PageHero } from '../components/Sections'
 
-// Add real project photos here as jobs are completed, e.g.
-// { src: '/images/projects/gate-kiganjo.jpg', title: 'Sliding gate, Kiganjo', category: 'Gates & Security' }
-const extraImages = [
-  { src: '/images/gallery-gate.jpg', title: 'Modern gate', category: 'Gates & Security' },
-  { src: '/images/steel-doors.jpg', title: 'Steel door', category: 'Gates & Security' },
-  { src: '/images/steel-windows.jpg', title: 'Steel windows & grills', category: 'Gates & Security' },
-  { src: '/images/gallery-roof.jpg', title: 'Steel roof trusses', category: 'Roofing & Light Steel Structures' },
-  { src: '/images/gallery-welding.jpg', title: 'Welding in progress', category: 'Workshop' },
-  { src: '/images/gallery-grinding.jpg', title: 'Grinding & finishing', category: 'Workshop' },
-]
-
-const images = [...allServices.map((s) => ({ src: s.image, title: s.name, category: s.name })), ...extraImages]
-const categories = ['All', ...new Set(images.map((i) => i.category))]
+const categories = ['All', ...workCategories]
 
 export default function Gallery() {
   const [active, setActive] = useState('All')
-  const shown = active === 'All' ? images : images.filter((i) => i.category === active)
+  const [open, setOpen] = useState(null) // index into `shown` of the photo being viewed large
+  const shown = active === 'All' ? workPhotos : workPhotos.filter((p) => p.category === active)
+
+  const step = (dir) => setOpen((i) => (i + dir + shown.length) % shown.length)
+
+  useEffect(() => {
+    if (open === null) return
+    const onKey = (e) => {
+      if (e.key === 'Escape') setOpen(null)
+      if (e.key === 'ArrowRight') step(1)
+      if (e.key === 'ArrowLeft') step(-1)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  })
+
+  const current = open !== null ? shown[open] : null
 
   return (
     <>
       <Seo
-        title="Gallery: Gates, Railings & Steel Work"
+        title="Gallery: Gates, Roofs, Beds & Steel Work"
         path="/gallery"
-        description={`Steel work by ${siteConfig.name}: gates, doors, grills, railings, roof structures, steel fixing, metal furniture and fabrication across Kenya.`}
+        image={workPhotos[0].src}
+        description={`Real photos of steel work by ${siteConfig.name}: gates, fencing, roof structures, railings, steel beds and site work. We work anywhere in Kenya.`}
       />
-      <PageHero eyebrow="Gallery" title="What we build">
-        A look at the kind of steel work we do.
+      <PageHero eyebrow="Gallery" title="Our work">
+        Real photos of gates, roof structures, beds and site work by our team. Tap any photo to see it larger.
       </PageHero>
 
       <section className="py-16">
         <div className="container-x">
-          <p className="flex items-start gap-2 rounded-md border border-steel-800 bg-steel-900 p-4 text-sm text-steel-400">
-            <Info className="mt-0.5 h-4 w-4 shrink-0 text-accent" aria-hidden="true" />
-            These are illustrations of the type of work we do. Photos of our own completed projects will be added here
-            soon.
-          </p>
-
-          <div className="mt-8 flex flex-wrap gap-2" role="group" aria-label="Filter gallery">
+          <div className="flex flex-wrap gap-2" role="group" aria-label="Filter photos">
             {categories.map((c) => (
               <button
                 key={c}
@@ -59,26 +58,54 @@ export default function Gallery() {
             ))}
           </div>
 
-          <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {shown.map((img) => (
-              <li key={img.src} className="group relative overflow-hidden rounded-lg ring-1 ring-steel-800">
-                <SmartImage
-                  src={img.src}
-                  alt={img.title}
-                  className="aspect-[4/3]"
-                  imgClassName="transition duration-500 group-hover:scale-105"
-                />
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/90 to-transparent p-4">
-                  <p className="font-display text-lg tracking-wide text-white uppercase">{img.title}</p>
-                  <p className="text-xs text-accent">{img.category}</p>
-                </div>
+          <ul className="mt-8 columns-1 gap-4 sm:columns-2 lg:columns-3">
+            {shown.map((photo, i) => (
+              <li key={photo.file} className="mb-4 break-inside-avoid">
+                <WorkPhoto photo={photo} onOpen={() => setOpen(i)} />
               </li>
             ))}
           </ul>
         </div>
       </section>
 
-      <CtaBand />
+      {current && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={current.caption}
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-ink/95 p-4"
+          onClick={() => setOpen(null)}
+        >
+          <button type="button" className="absolute top-4 right-4 rounded-md p-2 text-white hover:text-accent" aria-label="Close" onClick={() => setOpen(null)}>
+            <X className="h-7 w-7" />
+          </button>
+          <img
+            src={current.src}
+            alt={current.caption}
+            className="max-h-[80vh] max-w-full rounded-lg object-contain"
+            onClick={(e) => e.stopPropagation()}
+          />
+          <p className="mt-4 text-center text-white">
+            {current.caption}
+            <span className="ml-2 text-sm text-accent">{current.category}</span>
+          </p>
+          {shown.length > 1 && (
+            <div className="mt-4 flex gap-3" onClick={(e) => e.stopPropagation()}>
+              <button type="button" className="btn-ghost px-3 py-2" aria-label="Previous photo" onClick={() => step(-1)}>
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+              <span className="self-center text-sm text-steel-400">
+                {open + 1} / {shown.length}
+              </span>
+              <button type="button" className="btn-ghost px-3 py-2" aria-label="Next photo" onClick={() => step(1)}>
+                <ChevronRight className="h-5 w-5" />
+              </button>
+            </div>
+          )}
+        </div>
+      )}
+
+      <CtaBand title="Want work like this?" />
     </>
   )
 }
