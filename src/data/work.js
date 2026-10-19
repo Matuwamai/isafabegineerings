@@ -5,7 +5,7 @@
 
 export const workPhotos = [
   // Gates & fencing
-  { file: 'ornamental-steel-gate.jpg', width: 720, height: 1600, category: 'Gates & Fencing', service: 'gates-security', caption: 'Ornamental steel gate, installed' },
+  { file: 'ornamental-steel-gate.jpg', width: 720, height: 1600, category: 'Gates & Fencing', service: 'gates-security', caption: 'Ornamental steel sliding gate finished and ready to be installed' },
   { file: 'curved-top-steel-gate.jpg', width: 1600, height: 720, category: 'Gates & Fencing', service: 'gates-security', caption: 'Steel gate with a curved top, painted and ready to hang' },
   { file: 'steel-fence-installation.jpg', width: 960, height: 1280, category: 'Gates & Fencing', service: 'gates-security', caption: 'Installing tall steel fence panels' },
   { file: 'window-grill-panels.jpg', width: 720, height: 1600, category: 'Gates & Fencing', service: 'gates-security', caption: 'Window grill panels laid out for welding' },
@@ -13,7 +13,7 @@ export const workPhotos = [
   // Roofs & steel structures
   { file: 'steel-veranda-roof.jpg', width: 720, height: 1600, category: 'Roofs & Structures', service: 'roofing-structures', caption: 'Steel-framed veranda roof over a stone walkway' },
   { file: 'steel-roof-structure.jpg', width: 720, height: 1600, category: 'Roofs & Structures', service: 'roofing-structures', caption: 'Steel roof structure: columns, rafters and purlins' },
-  { file: 'circular-steel-roof-frame.jpg', width: 1600, height: 720, category: 'Roofs & Structures', service: 'roofing-structures', caption: 'Circular steel roof frame, welded on site' },
+  { file: 'circular-steel-roof-frame.jpg', width: 1600, height: 720, category: 'Roofs & Structures', service: 'roofing-structures', caption: 'Circular steel deck frame, welded on site' },
   { file: 'steel-columns-and-roof-frame.jpg', width: 720, height: 1600, category: 'Roofs & Structures', service: 'roofing-structures', caption: 'Steel columns and roof frame going up' },
   { file: 'light-steel-structure.jpg', width: 720, height: 1600, category: 'Roofs & Structures', service: 'roofing-structures', caption: 'Light steel structure on a concrete base' },
   { file: 'steel-enclosure-frame.jpg', width: 720, height: 1600, category: 'Roofs & Structures', caption: 'Steel-framed enclosure with mesh panels' },
